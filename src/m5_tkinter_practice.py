@@ -3,8 +3,8 @@ This project lets you try out Tkinter/Ttk and practice it!
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Loki Strain.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
 from tkinter import ttk
@@ -16,22 +16,33 @@ def main():
     # TODO: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
+    root = tkinter.Tk()
 
     # -------------------------------------------------------------------------
     # TODO: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
+    frame0 = ttk.Frame(root, padding=20)
+    frame0.grid()
+
 
     # -------------------------------------------------------------------------
     # TODO: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
+    hello_button = ttk.Button(frame0, text='Hello')
+    hello_button.grid()
+
 
     # -------------------------------------------------------------------------
     # TODO: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
+
+    hello_button['command'] = (lambda: hel())
+
+
 
     # -------------------------------------------------------------------------
     # TODO: 6. After reading and understanding the m4e module,
@@ -41,6 +52,18 @@ def main():
     #        on the Console if the current string in the Entry box
     #        is the string 'ok', but print "Goodbye" otherwise.
     # -------------------------------------------------------------------------
+
+    entry = ttk.Entry(frame0)
+    entry.grid()
+
+
+    entry_button = ttk.Button(frame0, text='ok?')
+    entry_button.grid()
+    entry_button['command'] = (lambda: hello_if_ok(entry.get()))
+
+
+
+
 
     # -------------------------------------------------------------------------
     # TODO: 7.
@@ -69,9 +92,38 @@ def main():
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
+    entry1 = ttk.Entry(frame0)
+    entry1.grid()
+
+
+    n=int(entry1.get())
+
+    entry1_button = ttk.Button(frame0, text='we print n of em')
+    entry1_button.grid()
+    entry1_button['command'] = lambda: n_times(entry.get(), n)
+
+
+
+
+    root.mainloop()
 
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+def hel():
+    print('Hello')
+
+def hello_if_ok(x):
+    if x == 'ok':
+        print('Hello')
+    else:
+        print('Goodbye')
+def n_times(s,n):
+    if type(n) == int:
+        for k in range(n):
+            print(s)
+
+
+
 main()
