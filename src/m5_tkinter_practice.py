@@ -13,13 +13,13 @@ from tkinter import ttk
 def main():
     """ Constructs a GUI with stuff on it. """
     # -------------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # DONE: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # -------------------------------------------------------------------------
     root = tkinter.Tk()
 
     # -------------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # DONE: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # -------------------------------------------------------------------------
     frame0 = ttk.Frame(root, padding=20)
@@ -27,7 +27,7 @@ def main():
 
 
     # -------------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # DONE: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # -------------------------------------------------------------------------
     hello_button = ttk.Button(frame0, text='Hello')
@@ -35,7 +35,7 @@ def main():
 
 
     # -------------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # DONE: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # -------------------------------------------------------------------------
@@ -45,7 +45,7 @@ def main():
 
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -66,7 +66,7 @@ def main():
 
 
     # -------------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -90,17 +90,18 @@ def main():
     ####################################################################
 
     # -------------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
+    # DONE: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
     entry1 = ttk.Entry(frame0)
     entry1.grid()
 
 
-    n=int(entry1.get())
+
 
     entry1_button = ttk.Button(frame0, text='we print n of em')
     entry1_button.grid()
-    entry1_button['command'] = lambda: n_times(entry.get(), n)
+    entry1_button['command'] = lambda: n_times(entry.get(), int(entry1.get()))
+
 
 
 
